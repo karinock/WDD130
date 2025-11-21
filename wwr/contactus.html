@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whitewater Rafting Vacations | Dry Oar Boating | Contact Us</title>
+
+  <link rel="stylesheet" href="styles/style.css">
+
+  <style>
+    form {
+      max-width: 500px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      border-radius: 10px;
+      background-color: #ffffff;
+      box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+      font-size: 1rem;
+    }
+
+    fieldset {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    legend {
+      padding: 0 .5rem;
+      font-weight: bold;
+    }
+
+    label {
+      display: inline-block;
+      min-width: 120px;
+      margin-bottom: .25rem;
+    }
+
+    input, textarea {
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: .5rem;
+      margin-top: .25rem;
+      margin-bottom: .75rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .button-row {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .button-row button {
+      padding: .75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: none;
+      background-color: #d9c2a3;
+      color: black;
+      cursor: pointer;
+    }
+
+    .button-row button:hover {
+      background-color: #bfa177;
+    }
+
+    /* Feedback bar */
+    #feedback {
+      background-color: antiquewhite;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: .5em;
+      /* hidden until form is submitted */
+      display: none;
+      text-align: center;
+    }
+
+    .moveDown {
+      margin-top: 3em;
+    }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <header>
+      <a id="logo_link" href="index.html">
+        <img class="logo" src="images/logo.png" alt="Dry Oar Logo">
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="rivers.html">Rivers</a>
+        <a href="site-plan-rafting.html">Site Plan</a>
+        <a href="contactus.html">Contact Us</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1 style="text-align:center; margin-top: 1.5rem;">Contact Us</h1>
+
+      <!-- feedback message area -->
+      <div id="feedback"></div>
+
+      <!-- Form based on MDN  -->
+      <form action="https://httpbin.org/post" method="post">
+        <fieldset>
+          <legend>Send us a message</legend>
+
+          <p>
+            <label for="user_name">Name:</label>
+            <input type="text" id="user_name" name="user_name" required>
+          </p>
+
+          <p>
+            <label for="user_email">Email:</label>
+            <input type="email" id="user_email" name="user_email" required>
+          </p>
+
+          <p>
+            <label for="user_message">Message:</label>
+            <textarea id="user_message" name="user_message" required></textarea>
+          </p>
+
+          <p>
+            <label for="newsletter">Newsletter:</label>
+            <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+            <span>I’d like to receive trip updates and news.</span>
+          </p>
+
+          <div class="button-row">
+            <button type="submit">Send Message</button>
+          </div>
+        </fieldset>
+      </form>
+    </main>
+
+    <footer>
+      <p>Dry Oar &copy; 2025 - Your Name</p>
+      <p><a href="site-plan-rafting.html">Site Plan</a></p>
+      <p><a href="contactus.html">Contact Us</a></p>
+      <div class="social">
+        <a href="https://facebook.com" target="_blank">
+          <img src="images/facebook.png" alt="facebook icon">
+        </a>
+        <a href="https://twitter.com" target="_blank">
+          <img src="images/twitter.png" alt="twitter icon">
+        </a>
+        <a href="https://instagram.com" target="_blank">
+          <img src="images/instagram.png" alt="instagram icon">
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- JavaScript from the assignment  -->
+  <script>
+    // get the feedback div element so we can do something with it
+    const feedbackElement = document.getElementById('feedback');
+    // get the form so we can read what was entered in it
+    const formElement = document.forms[0];
+
+    // listen for submit
+    formElement.addEventListener('submit', function(e) {
+      // stop the form from actually submitting
+      e.preventDefault();
+
+      // build a simple message using the user's name
+      const name = formElement.user_name.value;
+      feedbackElement.innerHTML = 'Thank you, ' + name + '! Your message has been received.';
+
+      // show the feedback element
+      feedbackElement.style.display = 'block';
+
+      // move the page content down so the bar doesn’t cover it
+      document.body.classList.toggle('moveDown');
+
+      // optional: clear the form
+      formElement.reset();
+    });
+  </script>
+</body>
+</html>
