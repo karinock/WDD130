@@ -1,0 +1,318 @@
+/* ---------- Google Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&family=Zen+Kurenaido&display=swap');
+
+/* ---------- Color & font variables (same as site plan) ---------- */
+:root {
+  --primary-color: #E7BF7E;
+  --secondary-color: #5D7B1B;
+  --accent1-color: #FFF3D5;
+  --accent2-color: #79451E;
+
+  --heading-font: "Zen Kurenaido", sans-serif;
+  --paragraph-font: "Sawarabi Gothic", Helvetica, sans-serif;
+
+  --headline-color-on-white: #5D7B1B;
+  --headline-color-on-color: #FFF3D5;
+  --paragraph-color-on-white: #5D7B1B;
+  --paragraph-color-on-color: #FFF3D5;
+  --paragraph-background-color: #5D7B1B;
+  --nav-link-color: #5D7B1B;
+  --nav-background-color: #E7BF7E;
+  --nav-hover-link-color: #FFF3D5;
+  --nav-hover-background-color: #79451E;
+}
+
+/* ---------- Global layout ---------- */
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-family: var(--paragraph-font);
+  background-color: var(--accent1-color);
+  color: var(--paragraph-color-on-white);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- Headings & text ---------- */
+
+h1, h2, h3, h4 {
+  font-family: var(--heading-font);
+  color: var(--headline-color-on-white);
+  margin: 0;
+}
+
+p {
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+}
+
+/* ---------- Header & navigation ---------- */
+
+header {
+  display: flex;
+  justify-content: space-between; /* Logo+Brand on left, Nav on right */
+  align-items: center;
+  background-color: var(--secondary-color);
+  padding: 30px 50px; /* Adjust padding to control header height */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Group logo + brand tightly */
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Closer spacing between logo and text */
+}
+
+.logo-area img {
+  height: 90px; /* Adjust as needed */
+}
+
+/* Brand Name */
+.brand {
+  font-family: var(--heading-font);
+  font-size: 38px;
+  font-weight: bold;
+  color: var(--headline-color-on-color);
+  line-height: 1;
+}
+
+/* NAVIGATION */
+nav {
+  display: flex;
+  justify-content: space-evenly; /* Spread links across */
+  align-items: center;
+  flex-grow: 1; /* Take remaining space */
+  margin-left: 40px; /* Space between brand and nav */
+}
+
+nav a {
+  text-decoration: none;
+  font-family: var(--heading-font);
+  font-size: 28px;
+  font-weight: bold;
+  padding: 18px 36px;
+  color: var(--nav-link-color);
+  background-color: var(--nav-background-color);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: var(--nav-hover-background-color);
+  color: var(--nav-hover-link-color);
+  transform: scale(1.05);
+}
+/* ---------- General main & sections ---------- */
+
+main {
+  padding: 1.5rem;
+  background-color: #ffffff;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- HOME PAGE ---------- */
+
+/* hero: title + Japanese text + image */
+#hero {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+#hero .hero-text h1 {
+  font-size: 2.4rem;
+}
+
+#hero .hero-text h2 {
+  font-size: 1.6rem;
+  margin-top: 0.5rem;
+}
+
+/* tagline bar */
+#tagline {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  text-align: center;
+}
+
+/* feature boxes (Easy / Learn / Heart) */
+#home-features {
+  margin-top: 2rem;
+}
+
+#home-features h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.feature-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feature-box {
+  flex: 1 1 200px;
+  background-color: var(--accent1-color);
+  border: 2px solid var(--secondary-color);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* intro and message sections */
+#home-intro h2,
+#home-message h2 {
+  margin-bottom: 0.5rem;
+}
+
+#home-message {
+  text-align: center;
+  background-color: var(--accent1-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+/* ---------- RECIPES PAGE ---------- */
+
+#recipes-hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#recipes-hero h1 {
+  margin-bottom: 1rem;
+}
+
+/* featured recipes */
+#featured-recipes h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.featured-image {
+  margin-bottom: 1.5rem;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.recipe-card {
+  background-color: var(--accent1-color);
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid var(--secondary-color);
+}
+
+/* story + tips + image */
+#recipe-story {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* ---------- ESSENTIALS PAGE ---------- */
+
+#essentials-hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#essentials-hero p {
+  max-width: 650px;
+  margin: 0.75rem auto 0 auto;
+}
+
+/* ingredients basics */
+#ingredients-basics h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ingredient-card {
+  background-color: var(--accent1-color);
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid var(--secondary-color);
+}
+
+/* tools layout */
+#tools h2 {
+  margin-bottom: 0.75rem;
+}
+
+.tools-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* learning basics / callout */
+#learning-basics .callout {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  padding: 1rem 1.5rem 2rem 1.5rem;
+  text-align: center;
+  background-color: var(--paragraph-background-color);
+  color: var(--paragraph-color-on-color);
+}
+
+footer a {
+  color: var(--headline-color-on-color);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Simple responsive tweak ---------- */
+
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  #hero,
+  #recipe-story,
+  .tools-layout {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding: 1rem;
+  }
+}

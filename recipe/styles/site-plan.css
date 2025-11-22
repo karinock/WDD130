@@ -26,6 +26,23 @@ Fonts are separated by a | */
   --nav-hover-background-color: #79451E;
 }
 
+/* ---------- Footer ---------- */
+
+footer {
+  padding: 1rem 1.5rem 2rem 1.5rem;
+  text-align: center;
+  background-color: var(--paragraph-background-color);
+  color: var(--paragraph-color-on-color);
+}
+
+footer a {
+  color: var(--headline-color-on-color);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
 
 /*  Look around below...but DON'T CHANGE ANYTHING! */
 
