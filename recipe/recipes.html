@@ -21,39 +21,83 @@
     </header>
 
   <main>
-    <!-- Hero banner -->
-    <section id="recipes-hero">
-      <h1>Recipes – Taste of Home</h1>
-      <div class="hero-image">
-        <img src="images/katsucurry.png" alt="Assortment of Japanese dishes">
+   <!-- Recipes Hero Banner (Full Width Slideshow) -->
+<section id="recipes-hero-banner">
+
+  <div class="slideshow-container recipes-banner">
+
+    <!-- Slide 1 -->
+    <div class="mySlides fade">
+      <img src="images/japanesemeal.png" alt="Rice and miso soup">
+
+      <div class="banner-overlay">
+        <h1>Recipes – Taste of Home</h1>
+        <h2>Simple, cozy Japanese dishes anyone can make at home.</h2>
       </div>
-    </section>
+
+      <div class="numbertext">1 / 3</div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="mySlides fade">
+      <img src="images/katsucurry.png" alt="Katsu curry">
+
+      <div class="banner-overlay">
+        <h1>Recipes – Taste of Home</h1>
+        <h2>Warm bowls, quiet evenings.</h2>
+      </div>
+
+      <div class="numbertext">2 / 3</div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="mySlides fade">
+      <img src="images/wrapping.png" alt="Cooking at home">
+
+      <div class="banner-overlay">
+        <h1>Recipes – Taste of Home</h1>
+        <h2>Cooking from the heart, right at home.</h2>
+      </div>
+
+      <div class="numbertext">3 / 3</div>
+    </div>
+
+    <!-- Prev / Next -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  </div>
+
+  <div class="dots-row">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+</section>
+
+
 
     <!-- Featured recipes section -->
     <section id="featured-recipes">
       <h2>Featured Recipes</h2>
-
-      <!-- Large image area (wireframe top image) -->
-      <div class="featured-image">
-        <img src="images/featured-dish.jpg" alt="Featured Japanese home-style dish">
-      </div>
-
+      
       <!-- Recipe cards -->
       <div class="recipe-grid">
         <article class="recipe-card">
-          <h3>Miso Soup (味噌汁)</h3>
+          <h3>Miso Soup 味噌汁</h3>
           <p>A warm, comforting soup made with dashi, miso paste, and tofu or vegetables.</p>
         </article>
         <article class="recipe-card">
-          <h3>Onigiri (おにぎり)</h3>
+          <h3>Onigiri おにぎり</h3>
           <p>Simple rice balls that are easy to pack, share, and customize with different fillings.</p>
         </article>
         <article class="recipe-card">
-          <h3>Teriyaki Chicken</h3>
+          <h3>Teriyaki Chicken 照り焼き</h3>
           <p>Sweet and savory grilled or pan-cooked chicken with a glossy teriyaki sauce.</p>
         </article>
         <article class="recipe-card">
-          <h3>Curry Rice (カレーライス)</h3>
+          <h3>Curry Rice カレーライス</h3>
           <p>A Japanese-style curry served over rice—perfect for cozy weeknight dinners.</p>
         </article>
       </div>
@@ -99,5 +143,36 @@
       <a href="#">Social Media</a>
     </p>
   </footer>
+  <script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
 </body>
 </html>
