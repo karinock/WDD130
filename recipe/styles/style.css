@@ -457,58 +457,258 @@ section {
 }
 
 
-/* ---------- ESSENTIALS PAGE ---------- */
+/* ---------- ESSENTIALS PAGE (Polished) ---------- */
 
+/* hero */
 #essentials-hero {
+  max-width: 1100px;
+  margin: 2.5rem auto 2rem auto;
+  padding: 2.25rem 2rem;
   text-align: center;
-  margin-bottom: 2rem;
+  background: linear-gradient(180deg, var(--accent1-color), #ffffff);
+  border-radius: 18px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
 }
 
-#essentials-hero p {
-  max-width: 650px;
-  margin: 0.75rem auto 0 auto;
-}
-
-/* ingredients basics */
-#ingredients-basics h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.ingredients-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.ingredient-card {
-  background-color: var(--accent1-color);
-  border-radius: 8px;
-  padding: 1rem;
-  border: 1px solid var(--secondary-color);
-}
-
-/* tools layout */
-#tools h2 {
+#essentials-hero h1 {
+  font-size: 2.6rem;
   margin-bottom: 0.75rem;
 }
 
-.tools-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 1.5rem;
-  align-items: start;
+#essentials-hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  opacity: 0.95;
 }
 
-/* learning basics / callout */
-#learning-basics .callout {
-  margin-top: 1rem;
-  padding: 1rem;
-  background-color: var(--primary-color);
-  border-radius: 8px;
-  font-weight: bold;
+/* ============== ESSENTIALS — FULL WIDTH BANNER ============== */
+
+#essentials-banner {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  position: relative;
+  overflow: hidden;
 }
+
+#essentials-banner img {
+  width: 100%;
+  height: 520px;          /* adjust taller/shorter */
+  object-fit: cover;
+  display: block;
+}
+
+#essentials-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);  /* dark overlay for contrast */
+}
+
+.essentials-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 2rem;
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.65);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.essentials-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+.essentials-overlay p {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #fff;
+}
+
+
+/* ingredients section layout */
+#ingredients-basics {
+  max-width: 1100px;
+  margin: 0 auto 2.5rem auto;
+}
+
+#ingredients-basics h2 {
+  text-align: center;
+  margin-bottom: 1.25rem;
+  font-size: 2rem;
+}
+
+/* cards + image as a clean 2-column section */
+#ingredients-basics .ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.ingredient-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 1.25rem 1.25rem;
+  border: 1px solid rgba(93, 123, 27, 0.35);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.10);
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ingredient-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.ingredient-card p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.ingredient-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.14);
+}
+
+/* ingredients image */
+.ingredients-image {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+.ingredients-image img {
+  display: block;
+  margin: -30px auto 0 auto; /* moves image UP */
+}
+
+
+/* tools section as a “card” block */
+#tools {
+  max-width: 1100px;
+  margin: 0 auto 2.5rem auto;
+  background-color: var(--accent1-color);
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+}
+
+#tools h2 {
+  text-align: center;
+  margin-bottom: 1.25rem;
+  font-size: 2rem;
+}
+
+/* image + list layout */
+.tools-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.tool-image img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.14);
+}
+
+/* list styling (clean + readable) */
+.tool-list ul {
+  margin: 0;
+  padding: 0 0 0 1.2rem;
+  text-align: left;
+  line-height: 1.9;
+  font-size: 1.05rem;
+}
+
+.tool-list li {
+  margin: 0.35rem 0;
+}
+
+/* tools paragraph */
+#tools p {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* learning basics section */
+#learning-basics {
+  max-width: 1100px;
+  margin: 0 auto 3rem auto;
+  padding: 2rem;
+  border-radius: 18px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+}
+
+#learning-basics h2 {
+  text-align: center;
+  margin-bottom: 0.75rem;
+  font-size: 2rem;
+}
+
+#learning-basics p {
+  max-width: 900px;
+  margin: 0.6rem auto;
+  line-height: 1.8;
+  text-align: center;
+}
+
+#learning-basics .callout {
+  margin-top: 1.25rem;
+  padding: 1.15rem 1.25rem;
+  background-color: var(--primary-color);
+  border-radius: 14px;
+  font-weight: bold;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.10);
+}
+
+.tool-image img,
+.ingredients-image img {
+  filter: contrast(1.02) saturate(1.02);
+}
+
+
+
+/* responsive */
+@media (max-width: 900px) {
+  #ingredients-basics .ingredients-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ingredients-image img {
+    height: 300px;
+  }
+
+  .tools-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-image img {
+    height: 300px;
+  }
+
+  #essentials-hero {
+    padding: 1.75rem 1.25rem;
+  }
+}
+
 
 /* ---------- Footer ---------- */
 
@@ -552,6 +752,45 @@ footer a:hover {
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
+
+/* =========================
+   FORCE Recipes banner full width
+   (put this AFTER .slideshow-container styles)
+   ========================= */
+
+#recipes-hero-banner {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 0;
+}
+
+/* override the default slideshow-container max-width */
+.slideshow-container.recipes-banner {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+/* make the banner image fill the screen nicely */
+.slideshow-container.recipes-banner .mySlides img {
+  width: 100%;
+  height: 520px;       /* adjust if you want taller/shorter */
+  object-fit: cover;
+}
+
+/* keep arrows on the edges */
+.slideshow-container.recipes-banner .prev { left: 18px; }
+.slideshow-container.recipes-banner .next { right: 18px; }
+
+/* optional: tighten dots spacing */
+#recipes-hero-banner .dots-row {
+  margin: 12px 0 0 0;
+}
+
 
 /* Hide the images by default */
 .mySlides {
